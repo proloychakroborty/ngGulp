@@ -1,0 +1,175 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <div class="navbar-header">
+    <img class="navbar-brand" src="assets/images/psi-small-logo.png">
+    <a class="navbar-brand" href="#">PSI Exams Online</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+
+    <!-- Start Navigation List -->
+    <ul class="nav navbar-nav navbar-right">
+      <li class="drop">
+        <a href="index.html" style="padding-top: 28px; padding-bottom: 28px;">Home</a>
+
+      </li>
+      <li class="drop">
+        <a href="about.html" style="padding-top: 28px; padding-bottom: 28px;">PSI News</a>
+
+      </li>
+      <li class="drop">
+        <a class="active" href="#" style="padding-top: 28px; padding-bottom: 28px;">PSI Bookstore</a>
+        <ul class="dropdown">
+
+        </ul>
+      </li>
+
+      <li class="drop">
+        <a href="blog.html" style="padding-top: 28px; padding-bottom: 28px;">About PSI</a> 
+      </li>
+      <li><a href="contact.html" style="padding-top: 28px; padding-bottom: 28px;">Contact Us</a></li>
+
+      <li style="margin-top: 1rem;">
+        <button type="button" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#LoginModal">Sign in</button>
+      </li> 
+    </ul>
+    <!-- Stat Search -->
+       <!-- <li>
+          <span class="search-side" style="margin-top: 0px;">
+              <a class="show-search"><i class="glyphicon glyphicon-search"></i></a>
+            </span>
+            </li>
+          </ul> -->
+          <!-- End Search -->
+
+          <!-- End Navigation List -->    
+
+        </div><!--/.navbar-collapse -->
+
+      </nav>
+
+      <!-- Landing page with login screen partial-->
+
+
+      <!-- Home page after login partial-->
+      <!--landing partial -->
+      <div class="container">
+        <div id="wrapper">
+
+          <!-- Sidebar -->
+          <div id="sidebar-wrapper">
+            <ul class="sidebar-nav" style="margin-top:2rem">
+              <li class="sidebar-brand" style="height: 30px;">
+                <h4>
+                  Online Practice Test
+                </h4>
+              </li>
+              <form class="col-*-3">
+                <li class="form-group">
+                  <input type="text" placeholder="AWS Cerificaion" class="form-control" ng-model="main.searchObj.name">
+                </li>
+                <li class="form-group">
+                 <input type="text" placeholder="24,West Street, LA" class="form-control" ng-model="main.searchObj.location">
+               </li>
+               <li class="form-group">
+                 <select class="form-control" ng-model="main.searchObj.distance">
+                  <option value="5">Within 5 miles</option>
+                  <option value="10">Within 10 miles</option>
+                  <option value="15">Within 15 miles</option>
+                  <option value="20">Within 20 miles</option>
+                </select>
+              </li>
+              <li>
+                <button type="submit" class="btn btn-primary btn-block" ng-click="main.search()"> Search </button>
+              </li>
+            </form> 
+            <hr>
+
+            <li>
+             <h4> Examination Overview</h4>
+             <ul style="list-style:none;padding-left:0">
+              <li> 
+                <h7 style="display:block">Exam</h7>
+                <h8 style="display:block">AWS Certification</h8>    
+              </li>
+
+            </ul>
+
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /#sidebar-wrapper -->
+
+      <!-- Page Content -->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="form-group">
+              <select class="form-control" ng-model="main.searchObj.testId" ng-change="main.search()">
+                 <option value="" disabled selected style="display: none;">Please select the Test</option>
+                 <option value="1">Java</option>
+                 <option value="2">Angular</option>
+                 <option value="3">React</option>
+                 <option value="4">HTML5</option>
+               </select>
+             </div>
+             <span class="btn-group" role="group" >
+              <button type="button" class="btn btn-default">This week</button>
+              <button type="button" class="btn btn-default">This Month</button>
+              <button type="button" class="btn btn-default">Custom</button>
+            </span>
+            <div class="media" ng-repeat="center in main.testCenters">
+              <div class="media-left">
+                <a href="#">
+
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">{{center.locationName}}</h4>
+                <div>{{center.address1}}</div>
+                <div>{{center.city}}, {{center.state}}</div>
+                <div>{{center.country}}-{{center.zip}}</div>
+              </div>
+              <div class="media-right"><button type="submit" class="btn btn-primary"> Book </button></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>  
+
+  <!-- This Modal is for Login -->  
+
+  <div class="modal fade bs-example-modal-sm" role="dialog" id="LoginModal" tabindex="-1">
+    <div class="modal-dialog modal-sm" role="document"> 
+      <div class="modal-content"> 
+        <div class="modal-header"> 
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button> 
+          <h4 class="modal-title" id="gridModalLabel">Login</h4> 
+        </div> 
+        <form> 
+          <div class="modal-body"> 
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+             <input type="password" placeholder="Password" class="form-control">
+           </div>
+         </div>
+
+         <div class="modal-footer"> 
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-success">Sign in</button>
+        </div> 
+      </form>
+    </div> 
+  </div> 
+</div>
